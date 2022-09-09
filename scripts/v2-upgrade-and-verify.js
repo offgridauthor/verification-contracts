@@ -11,6 +11,7 @@ require('dotenv').config();
 const ADDRESS=process.env.VotingToken;
 const V2_CONTRACT_BUILD=`https://raw.githubusercontent.com/offgridauthor/verification-contracts/main/artifacts/build-info/b42f250d48743104c16e746045c66dea.json`;
 const contractABI = JSON.stringify(JSON.parse(readFileSync(`artifacts/contracts/VotingTokenV2.sol/VotingTokenV2.json`, 'utf8')).abi);
+const NETWORK = 'rinkeby';
 
 async function main() {
   const VotingTokenV2 = await ethers.getContractFactory("VotingTokenV2");
@@ -27,12 +28,9 @@ async function main() {
   // admin upgrade proposal
   const adminClient = new AdminClient({apiKey: process.env.API_KEY, apiSecret: process.env.API_SECRET});
   const newImplementation = process.env.V2_IMPLEMENTATION;
-  const contract = { network: 'rinkeby', address: ADDRESS };
+  const contract = { network: NETWORK, address: ADDRESS };
   const proposal = await adminClient.proposeUpgrade({ newImplementation }, contract);
   console.log('Upgrade proposal created at ', proposal.url);
 }
 
-if (require.main === module) {
-  main().then(() => process.exit(0))
-    .catch(error => { console.error(error); process.exit(1); });
-}
+main().catch(console.error);

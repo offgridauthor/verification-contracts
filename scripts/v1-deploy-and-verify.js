@@ -1,8 +1,6 @@
-const { ethers , upgrades} = require('hardhat');
+const { ethers , upgrades, defender} = require('hardhat');
 const {AdminClient} = require('defender-admin-client');
 const {appendFileSync, readFileSync} = require('fs');
-const { defender } = require('hardhat');
-require('dotenv').config();
 
 const NETWORK = 'rinkeby';
 const NAME = "VotingToken";
@@ -33,7 +31,4 @@ async function main() {
   console.log(`Verified artifact with hash`, verification.providedSha256);
 }
 
-if (require.main === module) {
-  main().then(() => process.exit(0))
-    .catch(error => { console.error(error); process.exit(1); });
-}
+main().catch(console.error);

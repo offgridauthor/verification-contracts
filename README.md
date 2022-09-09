@@ -1,6 +1,6 @@
-# demo-contracts
+# Smart Contract Bytecode Verification
 
-Example repo to demonstrate bytecode verification review feature for contract upgrades in OpenZeppelin Defender.
+Example repo to demonstrate bytecode verification review feature for contract upgrade proposals in OpenZeppelin Defender.
 
 ## Scripts
 

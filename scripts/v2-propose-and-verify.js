@@ -23,7 +23,4 @@ async function main() {
   console.log(`Created new upgrade proposal at ${proposal.url} for artifact with digest ${verification?.providedSha256 ?? 'unknown'} (match ${verification.matchType})`);
 }
 
-if (require.main === module) {
-  main().then(() => process.exit(0))
-    .catch(error => { console.error(error); process.exit(1); });
-}
+main().catch(console.error);
