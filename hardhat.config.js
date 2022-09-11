@@ -17,7 +17,7 @@ module.exports = {
     },
   },
   defender: {
-    apiKey: process.env.API_KEY,
-    apiSecret: process.env.API_SECRET,
+    apiKey: process.env.DEFENDER_API_KEY,
+    apiSecret: process.env.DEFENDER_API_SECRET,
   }
 };

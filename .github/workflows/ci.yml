@@ -113,6 +113,6 @@ jobs:
           DEFENDER_ADMIN_POOL_ID: "us-east-2_1jXMfcFAa"
           DEFENDER_ADMIN_POOL_CLIENT_ID: "4osojg8pmt29f4blrpknrc8i9v"
           # API keys to Defender
-          API_KEY: "${{ secrets.API_KEY }}"
-          API_SECRET: "${{ secrets.API_SECRET }}"
+          DEFENDER_API_KEY: "${{ secrets.API_KEY }}"
+          DEFENDER_API_SECRET: "${{ secrets.API_SECRET }}"
           
