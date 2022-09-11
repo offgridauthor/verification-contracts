@@ -12,7 +12,7 @@ async function main() {
     kind: 'uups',
     description: `Upgrading to new version deployed at ${url}`,
     multisig: owner,
-    multisigType: 'Gnosis Safe', 
+    multisigType: 'EOA', 
   });
 // multisig options: 'Gnosis Safe' | 'Gnosis Multisig' | 'EOA';
 // Gnosis Safe is the latest offering. it is what's created if you use Defender to create your multisig. 

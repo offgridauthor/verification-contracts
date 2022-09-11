@@ -2,8 +2,8 @@ const { ethers , upgrades, defender} = require('hardhat');
 const {AdminClient} = require('defender-admin-client');
 const {appendFileSync, readFileSync} = require('fs');
 
-const NETWORK = 'rinkeby';
-const NAME = "VotingToken";
+const NETWORK = 'goerli';
+const NAME = "VotingTokenX";
 const REPO_URL = `https://raw.githubusercontent.com/offgridauthor/verification-contracts/main/artifacts/build-info/cf0dfac316410fa75337a95912878881.json`;
 const contractABI = JSON.stringify(JSON.parse(readFileSync(`artifacts/contracts/${NAME}.sol/${NAME}.json`, 'utf8')).abi);
 
@@ -27,8 +27,8 @@ async function main() {
   appendFileSync('.env', `\n${NAME}=${contract.address}`);
 
   // verify compilation of deployed contract
-  const verification = await defender.verifyDeployment(contract.address, NAME, REPO_URL);
-  console.log(`Verified artifact with hash`, verification.providedSha256);
+  // const verification = await defender.verifyDeployment(contract.address, NAME, REPO_URL);
+  // console.log(`Verified artifact with hash`, verification.providedSha256);
 }
 
 main().catch(console.error);

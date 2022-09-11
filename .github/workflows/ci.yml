@@ -100,14 +100,14 @@ jobs:
         run: ls -R artifacts
 
       - name: Propose upgrade to new version
-        run: yarn hardhat run scripts/v2-propose-and-verify.js --network rinkeby
+        run: yarn hardhat run scripts/v2-propose-and-verify.js --network goerli
         env:
           # URL used to reference the bytecode verification
           WORKFLOW_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           # Address of the contract to upgrade
-          ADDRESS: "0x65d6ed59533e5D89D15d4663cA6b209Bf2E8436a"
+          ADDRESS: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
           # Upgradeability owner
-          OWNER: "0x88BECCF8F957649c7701b670BFAA7318967f7412"
+          OWNER: "0x6084fBE2Aa96Bb131D6Bc7Bd3BE786882cfA250F"
           # Use dev environment instead of production
           DEFENDER_ADMIN_API_URL: "https://9ybn7i3oe4.execute-api.us-east-2.amazonaws.com/dev/"
           DEFENDER_ADMIN_POOL_ID: "us-east-2_1jXMfcFAa"

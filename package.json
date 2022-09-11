@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx hardhat compile",
-    "deploy": "npx hardhat run scripts/v1-deploy-and-verify.js --network goerli",
-    "upgrade": "npx hardhat run scripts/v2-propose-and-verify.js --network goerli",
-    "upgrade-admin": "npx hardhat run scripts/v2-upgrade-and-verify.js --network goerli"
+    "build": "yarn hardhat compile",
+    "deploy": "yarn hardhat run scripts/v1-deploy-and-verify.js --network goerli",
+    "upgrade": "yarn hardhat run scripts/v2-propose-and-verify.js --network goerli",
+    "upgrade-admin": "yarn hardhat run scripts/v2-upgrade-and-verify.js --network goerli"
   },
   "keywords": [],
   "author": "",
