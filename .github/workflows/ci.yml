@@ -100,7 +100,7 @@ jobs:
         run: ls -R artifacts
 
       - name: Propose upgrade to new version
-        run: yarn hardhat run scripts/v2-upgrade-and-verify.js --network goerli
+        run: yarn hardhat run scripts/v2-propose-and-verify.js --network goerli
         env:
           # URL used to reference the bytecode verification
           WORKFLOW_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
@@ -113,6 +113,6 @@ jobs:
           DEFENDER_ADMIN_POOL_ID: "us-east-2_1jXMfcFAa"
           DEFENDER_ADMIN_POOL_CLIENT_ID: "4osojg8pmt29f4blrpknrc8i9v"
           # API keys to Defender
-          DEFENDER_API_KEY: "${{ secrets.API_KEY }}"
-          DEFENDER_API_SECRET: "${{ secrets.API_SECRET }}"
+          API_KEY: "${{ secrets.API_KEY }}"
+          API_SECRET: "${{ secrets.API_SECRET }}"
           
