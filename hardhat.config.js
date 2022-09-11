@@ -16,11 +16,6 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY],
     },
   },
-  etherscan: {
-    apiKey:{
-      goerli: process.env.ETHERSCAN_KEY
-    }
-  },
   defender: {
     apiKey: process.env.API_KEY,
     apiSecret: process.env.API_SECRET,
