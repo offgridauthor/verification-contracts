@@ -7,7 +7,7 @@ const url = process.env.WORKFLOW_URL // 'https://raw.githubusercontent.com/offgr
 
 
 async function main() {
-  const proposal = await defender.proposeUpgrade(address, 'VotingTokenV2',{ 
+  const proposal = await defender.proposeUpgrade('0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512', 'VotingTokenV2',{ 
     bytecodeVerificationReferenceUrl: url,
     kind: 'uups',
     description: `Upgrading to new version deployed at ${url}`,
