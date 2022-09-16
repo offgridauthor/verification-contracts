@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 10
     env:
-      # Hardhat connection settings (TODO: use a relayer!)
+      # Hardhat connection settings 
       PRIVATE_KEY: "${{ secrets.PRIVATE_KEY }}"
       API_KEY: "${{ secrets.API_KEY }}"
       API_SECRET: "${{ secrets.API.SECRET }}"
@@ -59,8 +59,6 @@ jobs:
     env:
       # Hardhat connection settings (TODO: use a relayer!)
       PRIVATE_KEY: "${{ secrets.PRIVATE_KEY }}"
-      API_KEY: "${{ secrets.API_KEY }}"
-      API_SECRET: "${{ secrets.API.SECRET }}"
 
     steps:
       - uses: actions/checkout@v2
@@ -108,10 +106,6 @@ jobs:
           ADDRESS: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
           # Upgradeability owner
           OWNER: "0x6084fBE2Aa96Bb131D6Bc7Bd3BE786882cfA250F"
-          # Use dev environment instead of production
-          DEFENDER_ADMIN_API_URL: "https://9ybn7i3oe4.execute-api.us-east-2.amazonaws.com/dev/"
-          DEFENDER_ADMIN_POOL_ID: "us-east-2_1jXMfcFAa"
-          DEFENDER_ADMIN_POOL_CLIENT_ID: "4osojg8pmt29f4blrpknrc8i9v"
           # API keys to Defender
           API_KEY: "${{ secrets.API_KEY }}"
           API_SECRET: "${{ secrets.API_SECRET }}"

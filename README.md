@@ -8,6 +8,15 @@ Example repo to demonstrate bytecode verification review feature for contract up
 - `npm upgrade` - Deploy token contract V2, verify bytecode and create Admin proposal for signers to review
 - `npm upgrade-admin` - Same as `npm upgrade`, using `admin-client` instead
 
+## Walkthrough
+
+1. Write an upgradeable smart contract (or use wizard.openzeppelin.com to generate one) and save in /contracts
+2. Compile with `npx hardhat compile` to generate build artifacts and ABI
+3. Add the build artifact file(s) version control, commit and push to remote repository (`git add . && git commit -m "add build artifacts" && git push origin main`)
+4. Add ABI and URL to remote build artifact to `deploy-and-verify.js` script
+5. Run `npm deploy`
+6. 
+
 ## Reference
 
 - [Bytecode Verification - Docs](https://docs.openzeppelin.com/defender/admin#bytecode-verification)
